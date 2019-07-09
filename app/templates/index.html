@@ -85,6 +85,47 @@
 	</div>
 	<script>
 	  // your solution here
+    $(document).ready(() => {
+      var rotate = document.getElementById('rotate-box');
+      var rotateTime = new Hammer(rotate);
+      rotateTime.get('rotate').set({ enable: true });
+      rotateTime.on('rotate', function(ev) {
+        rotate.style.backgroundColor = 'white';
+      });
+
+
+      var pinch = document.getElementById('pinch-box');
+      var pinchTime = new Hammer(pinch);
+      pinchTime.get('pinch').set({enable: true});
+      pinchTime.on('pinch', function(ev) {
+        pinch.style.backgroundColor = 'white';
+      });
+
+      var press = document.getElementById('press-box');
+      var pressTime = new Hammer(press);
+      pressTime.on("press", function(ev) {
+        press.style.backgroundColor = 'white';
+      });
+
+      var pan = document.getElementById('pan-box');
+      var panTime = new Hammer(pan);
+      panTime.on("pan", function(ev) {
+        pan.style.backgroundColor = 'white'; 
+      });
+
+      var tap = document.getElementById('tap-box');
+      var tapTime = new Hammer(tap);
+      tapTime.on("tap", function(ev) {
+        tap.style.backgroundColor = 'white'; 
+      });
+
+      var swipe = document.getElementById('swipe-box');
+      var swipeTime = new Hammer(swipe);
+      swipeTime.on("swipe", function(ev) {
+        swipe.style.backgroundColor = 'white';
+      });
+    });
+    
   </script>
 </body>
 </html>
